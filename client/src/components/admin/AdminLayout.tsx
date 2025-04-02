@@ -28,9 +28,14 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-4">
             <Link href="/admin/dashboard">
-              <a className="text-2xl font-bold text-primary flex items-center">
-                <i className="fas fa-landmark mr-2"></i>
-                Nainaland Deals <span className="text-sm font-normal ml-2 text-gray-500">Admin</span>
+              <a className="flex items-center">
+                <img 
+                  src="https://i.ibb.co/997bBYNb/Whats-App-Image-2025-03-28-at-2-02-20-PM.jpg" 
+                  alt="Nainaland Deals Logo"
+                  className="h-10 mr-2" 
+                />
+                <span className="text-2xl font-bold text-primary">Nainaland Deals</span>
+                <span className="text-sm font-normal ml-2 text-gray-500">Admin</span>
               </a>
             </Link>
             

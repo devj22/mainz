@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server/index.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "client/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "server/index.ts"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "client/dist/index.html"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "JWT_SECRET": "6c12fce445003f1a5f6a2d4e59688e3c2a096dc5803c8afe0f5be93d10a45bc83f9249c7509272b2a910369fcebdad01b07bb0cbf8da05b3368ebfdb30841740d9affcaed1ca013d199c273ee1e3c8bc1cf0b5e2ee8c4fab6c2cf5f723061d27ba11b704f0ffc32fe076d56baf3601e834360759c2e2fc8fd9cbd815511a5340d9d9066405b9b2cb21da28ede52cd798f8c644743b7d1cbafb60f0d459224ddf4a717bff7a5191b8c2050ec2b5ebc0b1604f3877710630d227081d93ed6860b1a736a9b73e754d40d75480fd65d2d39cccdd93d3d80ff299dec74bf4308cb990c03296920947fba64430347e41cc1b31197b77fb38aea0526aef48faa0bfa959",
+    "JWT_EXPIRES_IN": "24h"
+  }
+} 
